@@ -18,6 +18,7 @@ body {
   --background-color: hsl(0, 0, 100%);
   --top-background-pattern-color: hsl(225, 100%, 98%);
   --card-background: hsl(227, 47%, 96%);
+  --card-active-background: hsl(227, 47%, 86%);
   --text-primary-color: hsl(230, 17%, 14%);
   --text-secondary-color: hsl(228, 12%, 44%);
 
@@ -66,19 +67,25 @@ body.dark {
   font-weight: bold;
 }
 
-.card {
-  background-color: var(--card-background);
+main {
   width: 90%;
   margin: 0 auto;
+}
+
+.card {
+  background-color: var(--card-background);
   margin-bottom: 1.5rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
   overflow: hidden;
   text-align: center;
+
+  &:hover {
+    background-color: var(--card-active-background);
+  }
 
   &--facebook::before {
     background-color: var(--facebook-color);
@@ -101,7 +108,6 @@ body.dark {
   content: '';
   width: calc(100% + 1rem);
   height: 4px;
-  margin-top: -0.5rem;
 }
 
 .card__username {
@@ -134,7 +140,7 @@ body.dark {
   }
 }
 
-.card__change {
+.change {
   margin: 1.5rem auto;
   display: flex;
   align-items: center;
@@ -153,4 +159,57 @@ body.dark {
   &--down span {
     color: var(--bright-red);
   }
+}
+
+.overview {
+  width: 90%;
+  margin: 0 auto;
+
+  h2 {
+    color: var(--text-secondary-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 2.5rem 0 1.5rem 0;
+  }
+}
+
+.overview-card {
+  background-color: var(--card-background);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: var(--card-active-background);
+  }
+}
+
+.overview-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+    font-weight: bold;
+  }
+}
+
+.overview-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 2rem;
+
+  h2 {
+    color: var(--text-primary-color);
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+  }
+}
+
+.overview-card__change {
+  margin: 0;
 }

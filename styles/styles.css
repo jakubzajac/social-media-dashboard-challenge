@@ -18,6 +18,7 @@ body {
   --background-color: hsl(0, 0, 100%);
   --top-background-pattern-color: hsl(225, 100%, 98%);
   --card-background: hsl(227, 47%, 96%);
+  --card-active-background: hsl(227, 47%, 86%);
   --text-primary-color: hsl(230, 17%, 14%);
   --text-secondary-color: hsl(228, 12%, 44%);
   height: 100%;
@@ -64,10 +65,13 @@ body.dark {
   font-weight: bold;
 }
 
-.card {
-  background-color: var(--card-background);
+main {
   width: 90%;
   margin: 0 auto;
+}
+
+.card {
+  background-color: var(--card-background);
   margin-bottom: 1.5rem;
   border-radius: 5px;
   display: -webkit-box;
@@ -83,9 +87,12 @@ body.dark {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5rem;
   overflow: hidden;
   text-align: center;
+}
+
+.card:hover {
+  background-color: var(--card-active-background);
 }
 
 .card--facebook::before {
@@ -108,7 +115,6 @@ body.dark {
   content: '';
   width: calc(100% + 1rem);
   height: 4px;
-  margin-top: -0.5rem;
 }
 
 .card__username {
@@ -145,7 +151,7 @@ body.dark {
   font-size: 0.8rem;
 }
 
-.card__change {
+.change {
   margin: 1.5rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,18 +161,83 @@ body.dark {
           align-items: center;
 }
 
-.card__change span {
+.change span {
   font-size: 0.8rem;
   font-weight: bold;
   color: var(--lime-green);
   margin-left: 0.25rem;
 }
 
-.card__change--up span {
+.change--up span {
   color: var(--lime-green);
 }
 
-.card__change--down span {
+.change--down span {
   color: var(--bright-red);
+}
+
+.overview {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.overview h2 {
+  color: var(--text-secondary-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.overview-card {
+  background-color: var(--card-background);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overview-card:hover {
+  background-color: var(--card-active-background);
+}
+
+.overview-card__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overview-card__top h3 {
+  font-size: 1rem;
+  color: var(--text-secondary-color);
+  font-weight: bold;
+}
+
+.overview-card__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-top: 2rem;
+}
+
+.overview-card__bottom h2 {
+  color: var(--text-primary-color);
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.overview-card__change {
+  margin: 0;
 }
 /*# sourceMappingURL=styles.css.map */
