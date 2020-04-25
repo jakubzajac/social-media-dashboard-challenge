@@ -283,6 +283,8 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 3rem;
+    width: 80%;
   }
 
   .header__main {
@@ -296,4 +298,13 @@ body::before {
   .switch-mode__caption {
     margin-right: 1rem;
   }
+
+  .card-container {
+    width: 80%;
+  }
+
+  .overview__heading {
+    width: 80%;
+  }
+
 }
