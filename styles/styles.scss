@@ -189,20 +189,18 @@ body::before {
   }
 }
 
-.card__content {
-  h2 {
-    font-weight: bold;
-    color: var(--text-primary-color);
-    font-size: 3rem;
-  }
+.card__amount {
+  font-weight: bold;
+  color: var(--text-primary-color);
+  font-size: 3rem;
+}
 
-  h3 {
-    margin-top: 0.5rem;
-    color: var(--text-secondary-color);
-    letter-spacing: 0.25rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-  }
+.card__followers {
+  margin-top: 0.5rem;
+  color: var(--text-secondary-color);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .change {
@@ -278,7 +276,6 @@ body::before {
 }
 
 @media (min-width: 960px) {
-
   .header {
     display: flex;
     align-items: center;
@@ -306,5 +303,10 @@ body::before {
   .overview__heading {
     width: 80%;
   }
+}
 
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

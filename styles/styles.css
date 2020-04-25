@@ -211,13 +211,13 @@ body::before {
   margin-left: 0.5rem;
 }
 
-.card__content h2 {
+.card__amount {
   font-weight: bold;
   color: var(--text-primary-color);
   font-size: 3rem;
 }
 
-.card__content h3 {
+.card__followers {
   margin-top: 0.5rem;
   color: var(--text-secondary-color);
   letter-spacing: 0.25rem;
@@ -338,6 +338,13 @@ body::before {
   }
   .overview__heading {
     width: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-container {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 /*# sourceMappingURL=styles.css.map */
