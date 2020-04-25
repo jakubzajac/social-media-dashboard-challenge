@@ -9,13 +9,21 @@ html {
   --bright-red: hsl(356, 69%, 56%);
   --facebook-color: hsl(195, 100%, 50%);
   --twitter-color: hsl(203, 89%, 53%);
-  --instagram-gradient: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --instagram-gradient: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
   --youtube-color: hsl(348, 97%, 39%);
 }
 
 body {
   --toggle-background-color: hsl(230, 22%, 74%);
-  --toggle-background-gradient: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggle-background-gradient: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
   --background-color: #fff;
   --top-background-pattern-color: hsl(225, 100%, 98%);
   --card-background: hsl(227, 47%, 96%);
@@ -27,7 +35,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  
+
   background-color: var(--background-color);
 }
 
@@ -57,28 +65,29 @@ body::before {
   margin: 30px auto;
 }
 
-.header__heading {
+.header__main {
   border-bottom: 1px solid var(--text-secondary-color);
+}
 
-  h1 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: 0.05rem;
-    color: var(--text-primary-color);
-  }
+.header__heading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  color: var(--text-primary-color);
+}
 
-  h2 {
-    color: var(--text-secondary-color);
-    margin: 0.5rem 0 1.5rem 0;
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
+.header__subheading {
+  color: var(--text-secondary-color);
+  margin: 0.5rem 0 1.5rem 0;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .switch-mode {
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .switch-mode__caption {
@@ -104,7 +113,7 @@ body::before {
     border-radius: 50%;
     top: 3px;
     left: 27px;
-    transition: left .3s;
+    transition: left 0.3s;
   }
 }
 
@@ -116,9 +125,12 @@ body::before {
   }
 }
 
-.main {
+.card-container {
   width: 90%;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 2rem;
 }
 
 .card {
@@ -131,6 +143,7 @@ body::before {
   align-items: center;
   overflow: hidden;
   text-align: center;
+  position: relative;
 
   &:hover {
     background-color: var(--card-active-background);
@@ -147,7 +160,7 @@ body::before {
   &--instagram::before {
     background: var(--instagram-gradient);
   }
-  
+
   &--youtube::before {
     background-color: var(--youtube-color);
   }
@@ -157,6 +170,9 @@ body::before {
   content: '';
   width: calc(100% + 1rem);
   height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .card__username {
@@ -164,7 +180,7 @@ body::before {
   justify-content: center;
   align-items: center;
   margin: 1.5rem auto;
-  
+
   span {
     font-size: 0.8rem;
     font-weight: bold;
@@ -211,22 +227,20 @@ body::before {
 }
 
 .overview {
-  width: 90%;
-  margin: 0 auto;
+}
 
-  h2 {
-    color: var(--text-secondary-color);
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 2.5rem 0 1.5rem 0;
-  }
+.overview__heading {
+  width: 90%;
+  color: var(--text-secondary-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 2.5rem auto 1.5rem auto;
 }
 
 .overview-card {
-  background-color: var(--card-background);
-  border-radius: 5px;
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  display: block;
+  text-align: left;
 
   &:hover {
     background-color: var(--card-active-background);
@@ -261,4 +275,25 @@ body::before {
 
 .overview-card__change {
   margin: 0;
+}
+
+@media (min-width: 960px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__main {
+    border-bottom: none;
+  }
+
+  .switch-mode {
+    margin: 0;
+  }
+
+  .switch-mode__caption {
+    margin-right: 1rem;
+  }
 }
